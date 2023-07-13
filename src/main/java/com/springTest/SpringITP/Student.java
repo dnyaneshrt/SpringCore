@@ -5,10 +5,12 @@ public class Student {
 	private int rollNo;
 	private String studentName;
 	private Address studentAddress;
+	
 	public int getRollNo() {
 		return rollNo;
 	}
 	public void setRollNo(int rollNo) {
+		System.out.println("setting roll no..");
 		this.rollNo = rollNo;
 	}
 	public String getStudentName() {

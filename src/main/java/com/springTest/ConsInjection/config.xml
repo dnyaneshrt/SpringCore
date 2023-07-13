@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:context="http://www.springframework.org/schema/context"
+    xsi:schemaLocation="http://www.springframework.org/schema/beans
+        http://www.springframework.org/schema/beans/spring-beans-3.1.xsd
+        http://www.springframework.org/schema/context
+        http://www.springframework.org/schema/context/spring-context-3.1.xsd">
+
+<!--<context:annotation-config />-->
+ 
+<bean name="electric_engine"  class="com.springTest.ConsInjection.Engine">
+	<constructor-arg value="electric_engine" type="String"></constructor-arg>
+	<constructor-arg value="2345545" type="String"></constructor-arg>
+</bean>
+
+<bean name="petrol_engine"  class="com.springTest.ConsInjection.Engine">
+	<constructor-arg value="petrol_engine" type="String"></constructor-arg>
+	<constructor-arg value="5555555" type="String"></constructor-arg>
+</bean>
+
+<bean name="audi_car" class="com.springTest.ConsInjection.Car">
+	<constructor-arg value="7300000" type="String"></constructor-arg>
+	<constructor-arg value="audi" ></constructor-arg>
+	<constructor-arg value="7777777" ></constructor-arg>
+	<constructor-arg ref="electric_engine"></constructor-arg>
+</bean>
+
+<bean name="BMW_car" class="com.springTest.ConsInjection.Car">
+	<constructor-arg value="8000000" type="String"></constructor-arg>
+	<constructor-arg value="BMW" ></constructor-arg>
+	<constructor-arg value="888888" ></constructor-arg>
+	<constructor-arg ref="petrol_engine"></constructor-arg>
+</bean>
+
+</beans>
