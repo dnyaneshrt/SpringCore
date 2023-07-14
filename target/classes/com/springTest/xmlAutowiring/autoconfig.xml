@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:context="http://www.springframework.org/schema/context"
+    xsi:schemaLocation="http://www.springframework.org/schema/beans
+        http://www.springframework.org/schema/beans/spring-beans-3.1.xsd
+        http://www.springframework.org/schema/context
+        http://www.springframework.org/schema/context/spring-context-3.1.xsd">
+
+<!--<context:annotation-config />-->
+
+<bean name="marks" class="com.springTest.xmlAutowiring.Marks">
+	
+	<constructor-arg name="math_marks" value="85"></constructor-arg>
+	<constructor-arg name="eng_marks" value="100"></constructor-arg>
+</bean>
+
+<!--<bean name="Student" class="com.springTest.xmlAutowiring.Student" autowire="byName">-->
+<!--	<bean name="Student" class="com.springTest.xmlAutowiring.Student" autowire="byType">-->
+<bean name="Student" class="com.springTest.xmlAutowiring.Student" autowire="constructor">
+	<constructor-arg  name="id" value="111"></constructor-arg >
+	<constructor-arg  name="name" value="akshay"></constructor-arg >
+<!--	<property name="marks" ref="marks"></property>-->
+	
+</bean>
+
+</beans>
